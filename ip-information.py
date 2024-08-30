@@ -26,3 +26,28 @@ class Aplicacion:
         self.boton_buscar = ttk.Button(self.raiz, text="Buscar", command=self.buscar_informacion)
         self.boton_buscar.grid(column=1, row=2, padx=5, pady=25)
 
+    def buscar_informacion(self):
+        direccion_ip = self.campo_direccion_ip.get()
+        if direccion_ip:
+            url = f"http://ip-api.com/json/{direccion_ip}"
+            respuesta = requests.get(url)
+            if respuesta.status_code == 200:
+                datos = respuesta.json()
+                self.campo_resultado.delete(1.0, tk.END)
+                self.campo_resultado.insert(tk.END, f"País: {datos['country']}\n")
+                self.campo_resultado.insert(tk.END, f"Región: {datos['region']}\n")
+                self.campo_resultado.insert(tk.END, f"Ciudad: {datos['city']}\n")
+                self.campo_resultado.insert(tk.END, f"Coordenadas: {datos['lat']}, {datos['lon']}\n")
+                self.campo_resultado.insert(tk.END, f"Organización: {datos['org']}\n")
+                self.campo_resultado.insert(tk.END, f"Proveedor: {datos['isp']}\n")
+            else:
+                self.campo_resultado.delete(1.0, tk.END)
+                self.campo_resultado.insert(tk.END, "Error al buscar información")
+        else:
+            self.campo_resultado.delete(1.0, tk.END)
+            self.campo_resultado.insert(tk.END, "Por favor, ingrese una dirección IP")
+
+if __name__ == "__main__":
+    raiz = tk.Tk()
+    aplicacion = Aplicacion(raiz)
+    raiz.mainloop()
