@@ -1,5 +1,5 @@
 # IP-Information
-Llama a una API para obtener información de cualquier IP y muestra la información en pantalla
+Llama a una API para obtener información de cualquier IP y muestra la información en pantalla.
 
 ## Descripción
 Este proyecto permite buscar la información de cualquier IP usando la API de Google.
