@@ -6,17 +6,18 @@ class Aplicacion:
     def __init__(self, raiz):
         self.raiz = raiz
         self.raiz.title("Buscar información de una dirección IP")
-        self.raiz.geometry("520x300")
+        self.raiz.geometry("550x300")
         self.raiz.configure(bg="grey")
 
         # Crear etiquetas y campos de texto
         self.etiqueta_direccion_ip = ttk.Label(self.raiz, text="Dirección IP:", background="Grey", 
-                                                font=("Arial", 12, "italic", "bold")
-                                                )
+                                                font=("Arial", 12, "italic", "bold"))
         self.etiqueta_direccion_ip.grid(column=0, row=0, padx=5, pady=20)
 
-        self.campo_direccion_ip = ttk.Entry(self.raiz, width=50, background="Grey")
+        self.campo_direccion_ip = ttk.Entry(self.raiz, width=30, background="Grey", 
+                                            font=("Arial", 11, "italic", "bold"))
         self.campo_direccion_ip.grid(column=1, row=0, padx=5, pady=5)
+        self.campo_direccion_ip.config(justify="center")
 
         self.etiqueta_resultado = ttk.Label(self.raiz, text="Resultado:", background="Grey", 
                                             font=("Arial", 12, "italic", "bold"))
