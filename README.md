@@ -10,5 +10,4 @@ Este proyecto permite buscar la información de cualquier IP usando la API de Go
 
 ## Uso
 1. Clona el repositorio con `git clone https://github.com/Asbelit0/IP-Information.git`
-2. Instala las dependencias con `pip install -r requirements.txt`
-3. Ejecuta el proyecto con ``
+2. Ejecuta el proyecto con `python ip-information.py`
