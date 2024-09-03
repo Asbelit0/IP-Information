@@ -2,7 +2,14 @@
 Llama a una API para obtener información de cualquier IP y muestra la información en pantalla.
 
 ## Descripción
-Este proyecto permite buscar la información de cualquier IP usando la API de Google.
+Este proyecto permite buscar la información de cualquier IP usando una API. Devuelve resultados como:
+* País
+* Región
+* Ciudad
+* Coordenadas
+* Organización
+* Proveedor
+* Versión-IP
 
 ## Requisitos
 * Tkinter
