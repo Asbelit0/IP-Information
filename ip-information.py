@@ -3,7 +3,7 @@ from tkinter import ttk
 import requests
 
 class Aplication:
-    BACKGROUND_COLOR = "grey"
+    BACKGROUND_COLOR = "white"
     FONT = ("Arial", 12, "italic", "bold")
 
     def __init__(self, raiz):
@@ -40,17 +40,20 @@ class Aplication:
         self.campo_direccion_ip.bind("<Return>", lambda event: self.search_information())
 
     def search_information(self):
-        direccion_ip = self.campo_direccion_ip.get()
-        if direccion_ip:
-            url = f"http://ip-api.com/json/{direccion_ip}"
-            respuesta = requests.get(url)
-            if respuesta.status_code == 200:
-                datos = respuesta.json()
-                self.show_result(datos)
+        try:
+            direccion_ip = self.campo_direccion_ip.get()
+            if direccion_ip:
+                url = f"http://ip-api.com/json/{direccion_ip}"
+                respuesta = requests.get(url)
+                if respuesta.status_code == 200:
+                    datos = respuesta.json()
+                    self.show_result(datos)
+                else:
+                    self.show_error("Error al buscar información")
             else:
-                self.show_error("Error al buscar información")
-        else:
-            self.show_error("Por favor, ingrese una dirección IP")
+                self.show_error("Por favor, ingrese una dirección IP")
+        except ValueError:
+            self.show_error("No es una dirección IP válida")
 
     def show_result(self, datos):
         self.camp_result.delete(1.0, tk.END)
