@@ -1,4 +1,6 @@
+<div align="center">
 <img src="https://imgur.com/o3B2p79.png">
+</div>
 
 # IP-Information
 Llama a una API para obtener información de cualquier IP y muestra la información en pantalla.
