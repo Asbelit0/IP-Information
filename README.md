@@ -5,6 +5,7 @@ Llama a una API para obtener información de cualquier IP y muestra la informaci
 Este proyecto permite buscar la información de cualquier IP usando una API. Devuelve resultados como:
 * País
 * Región
+* Región Name
 * Ciudad
 * Coordenadas
 * Organización
