@@ -59,10 +59,13 @@ class Aplication:
         self.camp_result.delete(1.0, tk.END)
         self.camp_result.insert(tk.END, f"País: {datos['country']}\n")
         self.camp_result.insert(tk.END, f"Región: {datos['region']}\n")
+        self.camp_result.insert(tk.END, f"Región-Name: {datos['regionName']}\n")
         self.camp_result.insert(tk.END, f"Ciudad: {datos['city']}\n")
         self.camp_result.insert(tk.END, f"Coordenadas: {datos['lat']}, {datos['lon']}\n")
         self.camp_result.insert(tk.END, f"Organización: {datos['org']}\n")
         self.camp_result.insert(tk.END, f"Proveedor: {datos['isp']}\n")
+        #self.camp_result.insert(tk.END, f"Moneda: {datos['currency']}\n")
+        #self.camp_result.insert(tk.END, f"Continente: {datos['continent']}\n")
 
     def show_error(self, mensaje):
         self.camp_result.delete(1.0, tk.END)
