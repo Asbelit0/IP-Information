@@ -57,6 +57,7 @@ class Aplication:
             self.show_error("No es una dirección IP válida")
 
     def show_result(self, datos):
+        self.camp_result.config(state="normal")
         self.camp_result.delete(1.0, tk.END)
         self.camp_result.insert(tk.END, f"País: {datos['country']}\n")
         self.camp_result.insert(tk.END, f"Región: {datos['region']}\n")
@@ -67,10 +68,14 @@ class Aplication:
         self.camp_result.insert(tk.END, f"Proveedor: {datos['isp']}\n")
         #self.camp_result.insert(tk.END, f"Moneda: {datos['currency']}\n")
         #self.camp_result.insert(tk.END, f"Continente: {datos['continent']}\n")
+        self.camp_result.config(state="disabled")
 
     def show_error(self, mensaje):
+        self.camp_result.config(state="normal")
         self.camp_result.delete(1.0, tk.END)
         self.camp_result.insert(tk.END, mensaje)
+        self.camp_result.config(state="disabled")
+        
 
 if __name__ == "__main__":
     raiz = tk.Tk()
