@@ -11,6 +11,7 @@ class Aplication:
         self.raiz.title("Buscar información de una dirección IP")
         self.raiz.geometry("550x300")
         self.raiz.configure(bg=self.BACKGROUND_COLOR)
+        self.raiz.resizable(False, False)
 
         self.create_widgets()
 
